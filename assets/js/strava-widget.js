@@ -40,19 +40,24 @@
       }
 
       var data = await response.json();
-      var ytd = data && data.ytd_run ? data.ytd_run : {};
+      if (!data || data.status !== "ok") {
+        throw new Error("Strava data is not connected yet");
+      }
+
+      var ytd = data.ytd_run ? data.ytd_run : {};
       var distance = Number(ytd.distance_miles || 0);
       var count = Number(ytd.count || 0);
-      var year = data && data.year ? String(data.year) : "this year";
+      var currentYear = String(new Date().getFullYear());
+      var year = data.year ? String(data.year) : currentYear;
 
       setText(valueEl, distance.toFixed(1));
       setText(runsEl, String(count));
       setText(yearEl, year);
-      setText(updatedEl, formatDate(data && data.updated_at ? data.updated_at : null));
+      setText(updatedEl, formatDate(data.updated_at || null));
     } catch (error) {
       setText(valueEl, "--");
       setText(runsEl, "--");
-      setText(yearEl, "this year");
+      setText(yearEl, String(new Date().getFullYear()));
       setText(updatedEl, "Connect Strava to show live totals.");
       console.warn("[strava-widget]", error);
     }
