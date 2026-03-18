@@ -50,6 +50,33 @@ The video hub is wired with a 3-episode layout.
 - Episode 1 and Episode 3 currently point to the LinkedIn video feed URL.
 - Replace those two links with direct LinkedIn post URLs when available.
 
+## Strava YTD Run Widget
+
+The homepage has a Strava widget that reads from:
+
+- `assets/data/strava-ytd.json`
+
+To sync this file from Strava:
+
+1. Create a Strava API app at [developers.strava.com](https://developers.strava.com).
+2. Collect these values from your app/OAuth flow:
+   - `STRAVA_CLIENT_ID`
+   - `STRAVA_CLIENT_SECRET`
+   - `STRAVA_REFRESH_TOKEN`
+   - Optional: `STRAVA_ATHLETE_ID`
+3. Run locally:
+
+```bash
+STRAVA_CLIENT_ID=... \
+STRAVA_CLIENT_SECRET=... \
+STRAVA_REFRESH_TOKEN=... \
+node scripts/update-strava-ytd.mjs
+```
+
+4. Commit the updated `assets/data/strava-ytd.json`.
+
+GitHub Actions workflow `.github/workflows/update-strava-ytd.yml` can refresh this daily using repository secrets with the same names.
+
 ## Publish
 
 Deploy this folder to any static host (GitHub Pages, Netlify, Vercel static, Cloudflare Pages, S3/CloudFront).

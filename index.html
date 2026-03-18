@@ -23,6 +23,7 @@
   <script src="assets/js/site-config.js"></script>
   <script src="assets/js/analytics.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/strava-widget.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -86,9 +87,10 @@
             <strong>Leadership in Practice</strong>
             <span>Experience leading cloud, platform, and infrastructure programs through scale and change.</span>
           </div>
-          <div class="stat">
-            <strong>Leadership Lens</strong>
-            <span>Operating models, team effectiveness, and platform maturity.</span>
+          <div class="stat run-widget" data-strava-widget>
+            <strong><span data-strava-value>--</span> YTD run miles</strong>
+            <span class="run-widget-subtitle"><span data-strava-runs>--</span> runs in <span data-strava-year>this year</span>.</span>
+            <small class="run-widget-meta" data-strava-updated>Connect Strava to show live totals.</small>
           </div>
           <div class="stat">
             <strong>Series in Motion</strong>
