@@ -651,23 +651,27 @@ h2 {
 }
 
 .video-thumb-wrap {
-  display: block;
+  display: grid;
+  place-items: center;
   position: relative;
   overflow: hidden;
+  padding: 0.95rem 0.95rem 1.05rem;
   background: linear-gradient(150deg, #22394b, #365f79);
 }
 
 .video-thumb {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+  width: min(220px, 100%);
+  height: auto;
   display: block;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 32, 46, 0.22);
 }
 
 .video-play-pill {
   position: absolute;
-  left: 0.75rem;
+  left: 50%;
   bottom: 0.75rem;
+  transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
@@ -836,8 +840,9 @@ blockquote {
   }
 
   .video-play-pill {
-    left: 0.6rem;
+    left: 50%;
     bottom: 0.6rem;
+    transform: translateX(-50%);
     font-size: 0.72rem;
   }
 }
