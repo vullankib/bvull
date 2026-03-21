@@ -661,9 +661,9 @@ h2 {
 
 .video-thumb {
   width: 100%;
-  height: 220px;
+  height: 268px;
   object-fit: cover;
-  object-position: center 14%;
+  object-position: center 30%;
   display: block;
 }
 
@@ -849,6 +849,6 @@ blockquote {
   }
 
   .video-thumb {
-    height: 210px;
+    height: 248px;
   }
 }
