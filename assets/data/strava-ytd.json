@@ -1,14 +1,14 @@
 {
   "source": "strava",
   "status": "ok",
-  "updated_at": "2026-11-07T17:43:51.847Z",
+  "updated_at": "2026-11-08T17:54:24.857Z",
   "year": 2026,
   "athlete_id": "57345498",
   "ytd_run": {
-    "count": 23,
-    "distance_meters": 133537,
-    "distance_miles": 83,
-    "moving_time_seconds": 55536,
-    "elevation_gain_meters": 741.5
+    "count": 24,
+    "distance_meters": 143517,
+    "distance_miles": 89.2,
+    "moving_time_seconds": 60396,
+    "elevation_gain_meters": 839.5
   }
 }
